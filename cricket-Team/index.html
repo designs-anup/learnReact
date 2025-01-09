@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load indian cricket team players using JSON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        ul li{
+            list-style: none;
+        }
+        #team-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .playerCard{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: .5rem;
+            width: 300px;
+            height: 400px;
+        }
+        .playerCard:hover{
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .playerDetails li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .5rem 0;
+        }
+        .playerDetails > li:not(:last-child){
+            border-bottom: 1px solid #ccc;
+        }
+        .playerAvatar{
+            height: 150px;
+        }
+        .playerName{
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        .Forms ul{
+            display: flex;
+        }
+        .Forms li{
+            padding: 0 .25rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul id="team-list">
+        <li class="playerCard">
+            <ul class="playerDetails">
+                <li class="playerAvatar"><i class="fa fa-user" style="font-size:36px"></i></li>
+                <li class="playerName">PlayerName : </li>
+                <li class="battingStyle">Left hand</li>
+                <li class="bowlingStyle">Left hand</li>
+                <li class="DomesticTeam">Delhi</li>
+                <li class="IPLTeam">Delhi Super</li>
+                <li class="Forms">
+                    <ul>
+                        <li>Test</li>
+                        <li>ODI</li>
+                    </ul>
+                </li> 
+            </ul>
+        </li>
+    </ul>
+    <script>
+        const requestURL = "https://designs-anup.github.io/cricket-team/indian-cricket-team.json"
+
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', requestURL)
+        // console.log(xhr.readyState);
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText)
+
+                let card = ''
+
+                for (let i = 0; i < data.length; i++) {
+
+                    let bowlingStyle = (data[i]['Bowling-style']) ? data[i]['Bowling-style'] : '-';
+                    let forms = (data[i]['Forms']) ? data[i]['Forms'] : '-';    
+
+                    card += `<li class='playerCard'>
+                                <ul class='playerDetails'>
+                                    <li class="playerAvatar"><i class="fa fa-user" style="font-size:36px"></i></li>
+                                    <li class="playerName">${data[i]['Name']}</li>
+                                    <li class="battingStyle">${data[i]['Batting-style']}</li>
+                                    <li class="bowlingStyle">${bowlingStyle}</li>
+                                    <li class="DomesticTeam">${data[i]['Domestic-team']}</li>
+                                    <li class="IPLTeam">${data[i]['IPL-Team']}</li>
+                                    <li class="Forms">
+                                        <ul>
+                                            <li>${forms}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>`
+                }
+
+                document.querySelector('#team-list').innerHTML = card;
+            }
+        }
+        xhr.send()
+    </script>
+</body>
+</html>
