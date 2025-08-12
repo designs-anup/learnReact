@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './components/Navbar'
 
 const MyHeadPhoneHeader = (props) => {
   const {children} = props
@@ -21,6 +22,8 @@ function App() {
 
   return (
     <>
+      <Navbar />
+      
       <h1>My Head Phone Store</h1>
 
       <MyHeadPhoneHeader>
