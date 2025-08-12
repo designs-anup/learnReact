@@ -3,32 +3,30 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const MyHeadPhoneHeader = (props) => {
+  const {children} = props
+
+  console.log(props);
+  
+  return(
+    <>
+      <h1 className="text-lg text-green-400 bg-red-700 border-2 border-cyan-400">Welcome To My Headphone Store</h1>
+      <p>{children}</p>
+    </>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
       <h1>My Head Phone Store</h1>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <MyHeadPhoneHeader>
+        This is all about headphone store description sample content
+      </MyHeadPhoneHeader>
+
     </>
   )
 }
