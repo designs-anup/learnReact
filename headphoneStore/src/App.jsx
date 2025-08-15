@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
+import { Outlet } from 'react-router'
+import { Routes, Route } from 'react-router'
 
 const MyHeadPhoneHeader = (props) => {
   const {children} = props
@@ -29,6 +31,11 @@ function App() {
       <MyHeadPhoneHeader>
         This is all about headphone store description sample content
       </MyHeadPhoneHeader>
+
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
 
     </>
   )
