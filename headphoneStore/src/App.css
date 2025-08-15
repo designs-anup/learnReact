@@ -1,3 +1,22 @@
+.navLinkUI{
+  display: flex;
+  gap: 10px;
+  border: 1px solid lavender;
+
+  li{
+    padding: 5px 10px;
+  }
+
+  .active{
+    background-color: lavender;
+    color: purple;
+  }
+}
+
+h1{
+  font-size: 6em;
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
