@@ -5,6 +5,10 @@ import './App.css'
 import Navbar from './components/Navbar'
 import { Outlet } from 'react-router'
 import { Routes, Route } from 'react-router'
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
+import Contact from './pages/Contact'
 
 const MyHeadPhoneHeader = (props) => {
   const {children} = props
@@ -29,12 +33,16 @@ function App() {
       <h1>My Head Phone Store</h1>
 
       <MyHeadPhoneHeader>
-        This is all about headphone store description sample content
+        This is all about headphone store description sample content ....
       </MyHeadPhoneHeader>
 
+      
 
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/roducts' element={<Products/>} />
+        <Route path='/contact' element={<Contact/>} />
       </Routes>
 
     </>
