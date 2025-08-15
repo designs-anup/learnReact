@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import { Outlet } from 'react-router'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, Link } from 'react-router'
 import Home from './pages/Home'
 import About from './pages/About'
 import Products from './pages/Products'
@@ -36,12 +36,17 @@ function App() {
         This is all about headphone store description sample content ....
       </MyHeadPhoneHeader>
 
-      
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/products">Products</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+      </ul>
 
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
-        <Route path='/roducts' element={<Products/>} />
+        <Route path='/products' element={<Products/>} />
         <Route path='/contact' element={<Contact/>} />
       </Routes>
 
