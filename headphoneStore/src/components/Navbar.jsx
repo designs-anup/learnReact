@@ -64,6 +64,16 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
+
+            <div>
+                <span>Logo</span>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Products</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
         </>
     )
 }
