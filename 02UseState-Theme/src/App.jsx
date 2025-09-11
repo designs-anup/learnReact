@@ -23,7 +23,7 @@ function App() {
   return (
     <>
 
-      <div className={darkMode ? 'darkTheme' : 'lightTheme'}>
+      <div /*className={darkMode ? 'darkTheme' : 'lightTheme'}*/ style={darkMode ? darkTheme : lightTheme}>
         <h2>{darkMode ? 'darkTheme' : 'lightTheme'}</h2>
         <h1>{darkMode ? 'DarkMode' : 'LightMode'}</h1>
         <button onClick={() => setDarkMode(!darkMode)}
