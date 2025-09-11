@@ -9,14 +9,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   const lightTheme = {
-    backgroundColor: '#fff',
-    color: '#000',
+    backgroundColor: 'lavender',
+    color: 'purple',
     transition: 'all 0.3s ease'
   }
 
   const darkTheme = {
     backgroundColor: '#121212',
-    color: '#fff',
+    color: '#fff000',
     transition: 'all 0.3s ease'
   }
 
