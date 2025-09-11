@@ -3,28 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import UseStateName from './components/UseStateName'
+import Counter from './components/Counter'
 
-const LearnCount = () => {
-  const [counter, setCounter] = useState(5)
-
-  function decrementCount(){
-    // setCounter(counter - 1)
-    setCounter((prevCount) => prevCount - 1)
-  }
-
-  function incrementCount(){
-    // setCounter(counter + 1)
-    setCounter((nextCount) => nextCount + 1)
-  }
-
-  return(
-    <>
-      <button onClick={decrementCount}>-</button>
-      <span>{counter}</span>
-      <button onClick={incrementCount}>+</button>
-    </>
-  )
-}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,9 +12,9 @@ function App() {
   return (
     <>
 
-      <LearnCount/>
-
       <UseStateName/>
+
+      <Counter />
 
       <div>
         <a href="https://vite.dev" target="_blank">
