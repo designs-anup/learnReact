@@ -17,6 +17,7 @@ function App() {
       <Students name='Rohit' age={20} isStudent={true}/>
       <Students name='Shyam' age={30} isStudent={false}/>
       <Students name='Amit' age={18} isStudent={true}/>
+      <Students/>
 
       <div>
         <a href="https://vite.dev" target="_blank">
