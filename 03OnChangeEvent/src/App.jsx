@@ -2,16 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import OnChange from './components/OnChange'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  // onChange = event handler used primarily with form emements 
-  // ex. <input>, <textarea>, <select>, <radio> 
-  // Triggers a function every time the value of the input changes
-
   return (
     <>
+      <OnChange/>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
