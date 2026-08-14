@@ -57,6 +57,16 @@ function App() {
     </div>
 
     <ul>
+      {
+        users.map(user => (
+          <li key={user.id}>
+            {user.name}
+          </li>
+        ))
+      }
+    </ul>
+
+    <ul>
       {products.map(product => (
         <li key={product.id}>
           {product.name} - ${product.price}
