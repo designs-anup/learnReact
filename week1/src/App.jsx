@@ -54,6 +54,7 @@ function App() {
       <p>Current Count: <strong>{count}</strong></p>
       <button onClick={handleClick}>Click Me!</button>
       <button onClick={handleReset}>Reset</button>
+      <button onClick={() => setCount(0)}>Reset Button</button>
     </div>
 
     <ul>
