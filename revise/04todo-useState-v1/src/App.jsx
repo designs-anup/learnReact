@@ -3,6 +3,7 @@ import './App.css'
 import ControlledInput from './components/ControlledInput'
 import UncontrolledInput from './components/UncontrolledInput'
 import UserForm from './components/UserForm'
+import Todov1 from './components/Todov1'
 
 function App() {
   const [todoList, setTodoList] = useState([])
@@ -38,6 +39,8 @@ function App() {
       <UncontrolledInput/>
 
       <UserForm/>
+
+      <Todov1/>
     </>
   )
 }
