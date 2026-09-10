@@ -7,7 +7,14 @@ function Todov2(){
         e.preventDefault()
         if(!todoInput.trim()){ alert('input is empty'); return }
         console.log("form submitted : " , todoInput)
-        setTodoList([todoList, ...todoInput])
+
+        const newTodo = {
+            id : Date.now(),
+            text : todoInput,
+            completed : false
+        }
+
+        setTodoList([...todoList, newTodo])
         setTodoInput('')
     }
     return(
@@ -21,7 +28,9 @@ function Todov2(){
             />
             <button type="submit">Add</button>
         </form>
-        {todoList}
+        {todoList.map((todo) => (
+            <p key={todo.id}>{todo.id} - {todo.text}</p>
+        ))}
         </>
     )
 }
